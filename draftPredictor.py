@@ -5,11 +5,18 @@
 # - Make an object with all relevant info? How to Plot? Equation?
 # Step 2: Plot 7-11, 12,13
 # Step 3: Calculate MSE to show similarity and efficiency of model
+from enum import Enum
+
+class Position(Enum):
+    Guard = 1
+    Forward = 2
+    Center = 3
 
 class Player:
-    def __init__(self, c_ppg, c_rpg, c_apg, c_fg_pct, c_bpg, c_spg, c_sos,
+    def __init__(self, pos, c_ppg, c_rpg, c_apg, c_fg_pct, c_bpg, c_spg, c_sos,
                  avg_ppg, avg_rpg, avg_apg, avg_fg_pct, avg_spg, avg_bpg,
                  all_star, all_nba):
+        self.pos = pos
         self.c_ppg = c_ppg
         self.c_rpg = c_rpg
         self.c_apg = c_apg
@@ -31,6 +38,9 @@ def get_x_arr(player):
     return [[player.c_ppg], [player.c_rpg], [player.c_apg], [player.c_fg_pct],
             [player.c_bpg], [player.c_spg], [player.c_sos]]
 
+
+def get_y_arr(stat):
+    return [stat]
 
 
 

@@ -1,40 +1,17 @@
-import matplotlib.pyplot as graph
 import numpy
 
-
-# Setting up the 'X' matrix
-def setupx(xdata, num):
-    x = [[0, 0] for k in range(num)]
-    for i in range(num):
-        for j in range(2):
-            if (j == 0):
-                x[i][j] = xdata[i] ** 3
-            else:
-                x[i][j] = xdata[i] ** 6
-    return x
+# Setting up the original 'theta', 'p', and 'b' matrices
+t = [[0], [0]]
+p = [[1, 0], [0, 1]]
+b = [[0], [0]]
 
 
-# Setting up the 'Y' matrix
-def setupy(ydata, num):
-    y = [[ydata[n]] for n in range(num)]
-    return y
-
-
-# Calculating the missing values
-def calcTheta(x, y):
-    xt = numpy.transpose(x)
-    xtx = numpy.matmul(xt, x)
-    inverse = numpy.linalg.inv(xtx)
-    xty = numpy.matmul(xt, y)
-    return numpy.matmul(inverse, xty)
-
-
-# Preform either recursive or forgetting least squares
-def recurse_ls(idx, val):
+# Preform either recursive or forgetting least squares using sherman-morrison formula
+def recurse_ls(player_x, player_y, val):
     global b, t
 
     # Transforming the 'p' array
-    x_arr = [[xTraining[idx] ** 3], [xTraining[idx] ** 6]]
+    x_arr = player_x
     top = numpy.matmul(numpy.matmul(numpy.matmul(p, x_arr), numpy.transpose(x_arr)), p)
     bottom = val + numpy.matmul(numpy.matmul(numpy.transpose(x_arr), p), x_arr)[0]
 
@@ -46,7 +23,7 @@ def recurse_ls(idx, val):
             p[i][j] = p[i][j] / val
 
     # Calculating new values for 'b' array & combing 'b' and 'p'
-    xy = [[(xTraining[idx] ** 3) * yTraining[idx]], [(xTraining[idx] ** 6) * yTraining[idx]]]
+    xy = numpy.matmul(player_x, player_y)
     b = [[b[0][0] + xy[0][0]], [b[1][0] + xy[1][0]]]
     t = numpy.matmul(p, b)
     return t
