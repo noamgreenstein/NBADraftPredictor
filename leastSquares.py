@@ -28,6 +28,7 @@ def calcTheta(x, y):
     xty = numpy.matmul(xt, y)
     return numpy.matmul(inverse, xty)
 
+
 # Preform either recursive or forgetting least squares
 def recurse_ls(idx, val):
     global b, t
