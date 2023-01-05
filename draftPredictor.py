@@ -7,10 +7,12 @@
 # Step 3: Calculate MSE to show similarity and efficiency of model
 from enum import Enum
 
+
 class Position(Enum):
     Guard = 1
     Forward = 2
     Center = 3
+
 
 class Player:
     def __init__(self, pos, c_ppg, c_rpg, c_apg, c_fg_pct, c_bpg, c_spg, c_sos,
