@@ -5,7 +5,7 @@ import leastSquares as rls
 theta = [0, 0]
 
 
-def get_it_done(players, y, test, test_y, name):
+def get_it_done(players, y, test, test_y, name, pos):
     x_plot = [0 for x in players]
     x_data = [[0, 0] for x in players]
 
@@ -30,7 +30,9 @@ def get_it_done(players, y, test, test_y, name):
     test_x = [draftPredictor.get_x_arr(players[x])[1] for x in test]
     graph.plot(test_x, test_y)
 
-    graph.title(name + " MSE: " + get_mse(test_x, test_y, theta, test_y.length))
+    graph.title(pos + " MSE: " + get_mse(test_x, test_y, theta, test_y.length))
+    graph.xlabel("Recursive Least Squares formula y = \t +\tx")
+    graph.ylabel(name)
     graph.show()
 
 
