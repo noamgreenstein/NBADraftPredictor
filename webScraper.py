@@ -34,6 +34,10 @@ def get_totals(div):
         blk = trash[0].split('<td class="right" data-stat="blk">')
         blocks = blk[1][:len(blk[1]) - 7]
         print(float(blocks))
+    except IndexError:
+        blk = trash[0].split('<td class="right iz" data-stat="blk">')
+        blocks = blk[1][:len(blk[1]) - 7]
+        print(float(blocks))
     stl = blk[0].split('<td class="right" data-stat="stl">')
     steals = stl[1][:len(stl[1]) - 7]
     print(float(steals))
@@ -76,4 +80,3 @@ def get_college(div):
     return [float(points), float(rebounds), float(assists), float(fg_pct),
             float(steals)/float(games), float(blocks)/float(games)]
 
-get_data('https://www.basketball-reference.com/players/m/mcrobjo01.html', 2, 0, 0)

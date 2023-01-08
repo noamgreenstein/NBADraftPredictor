@@ -43,8 +43,12 @@ training_2007 = numpy.array(
      webScraper.get_data('https://www.basketball-reference.com/players/f/fazekni01.html', 2, 0, 0),
      webScraper.get_data('https://www.basketball-reference.com/players/d/davisgl01.html', 2, 0, 0),
      webScraper.get_data('https://www.basketball-reference.com/players/d/davidje01.html', 2, 0, 0),
-     webScraper.get_data('https://www.basketball-reference.com/players/m/mcrobjo01.html', 2, 0, 0)])
-draftPredictor.Player(1, 15.7, 9.6, 0.7, .616, 3.3, 0.55, 840, 656, 51, 130, 40, 0, 0)
-draftPredictor.Player(1, 15.7, 9.6, 0.7, .616, 3.3, 0.55, 840, 656, 51, 130, 40, 0, 0)
-draftPredictor.Player(1, 15.7, 9.6, 0.7, .616, 3.3, 0.55, 840, 656, 51, 130, 40, 0, 0)
-draftPredictor.Player(1, 15.7, 9.6, 0.7, .616, 3.3, 0.55, 840, 656, 51, 130, 40, 0, 0)
+     webScraper.get_data('https://www.basketball-reference.com/players/m/mcrobjo01.html', 2, 0, 0),
+     webScraper.get_data('https://www.basketball-reference.com/players/s/strawdj01.html', 1, 0, 0),
+     webScraper.get_data('https://www.basketball-reference.com/players/r/richach01.html', 2, 0, 0),
+     webScraper.get_data('https://www.basketball-reference.com/players/l/lasmest01.html', 2, 0, 0),
+     webScraper.get_data('https://www.basketball-reference.com/players/m/mcguido01.html', 2, 0, 0),
+     webScraper.get_data('https://www.basketball-reference.com/players/g/grayaa01.html', 2, 0, 0),
+     webScraper.get_data('https://www.basketball-reference.com/players/g/greenta01.html', 1, 0, 0),
+     webScraper.get_data('https://www.basketball-reference.com/players/n/nichode01.html', 2, 0, 0),
+     draftPredictor.Player(1, 8.8, 4.2, 4.9, .417, 1.2, 0.14, 7005, 1802, 2730, 458, 50, 0, 0)])
