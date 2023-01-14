@@ -80,3 +80,8 @@ def get_college(div):
     return [float(points), float(rebounds), float(assists), float(fg_pct),
             float(steals)/float(games), float(blocks)/float(games)]
 
+
+def nlp_try(url):
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    print(soup)

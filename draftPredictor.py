@@ -36,6 +36,5 @@ def get_x_arr(player):
 def get_y_arr(stat):
     return [stat]
 
-# p1 = Player(3, 15.7, 9.6, 0.7, .616, 0.55, 3.3, 840, 656, 51, 40, 130, 0, 0)
-# print(Position(p1.pos).name)
+
 
