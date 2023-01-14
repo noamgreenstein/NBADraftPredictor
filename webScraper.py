@@ -12,11 +12,10 @@ def get_data(url, pos, all_star, all_nba):
     college = get_college(div_college)
 
     return draftPredictor.Player(pos,
-                                 college[0], college[1], college[2], college[3], college[4], college[5],
+                                 college[0], college[1], college[2], college[3], college[4],
+                                 college[5],
                                  totals[0], totals[1], totals[2], totals[3], totals[4],
                                  all_star, all_nba)
-
-
 
 
 def get_totals(div):
@@ -48,24 +47,24 @@ def get_college(div):
     tfoot = div.prettify().split("<tfoot>")
     end_out = tfoot[1].split("</tr>")
     ast = end_out[0].split('<td class="right " data-stat="ast_per_g" >')
-    assists = ast[1][:len(ast[1])-5]
+    assists = ast[1][:len(ast[1]) - 5]
     trb = ast[0].split('<td class="right " data-stat="trb_per_g" >')
-    rebounds = trb[1][:len(trb[1])-5]
+    rebounds = trb[1][:len(trb[1]) - 5]
     pts = trb[0].split('<td class="right " data-stat="pts_per_g" >')
-    points = pts[1][:len(pts[1])-5]
+    points = pts[1][:len(pts[1]) - 5]
     fg = pts[0].split('<td class="right " data-stat="fg_pct" >')
-    fg_pct = fg[1][:len(pts[1])-5]
+    fg_pct = fg[1][:len(pts[1]) - 5]
     trash = fg[0].split('<td class="right " data-stat="tov" >')
     blk = trash[0].split('<td class="right " data-stat="blk" >')
-    blocks = blk[1][:len(blk[1])-5]
+    blocks = blk[1][:len(blk[1]) - 5]
     stl = blk[0].split('<td class="right " data-stat="stl" >')
-    steals = stl[1][:len(stl[1])-5]
+    steals = stl[1][:len(stl[1]) - 5]
     more_trash = stl[0].split('<td class="right " data-stat="mp" >')
     g = more_trash[0].split('<td class="right " data-stat="g" >')
-    games = g[1][:len(ast[1])-6]
+    games = g[1][:len(ast[1]) - 6]
 
     return [float(points), float(rebounds), float(assists), float(fg_pct),
-            float(steals)/float(games), float(blocks)/float(games)]
+            float(steals) / float(games), float(blocks) / float(games)]
 
 
 def nlp_try(url):
