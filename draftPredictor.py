@@ -29,8 +29,8 @@ class Player:
 
 
 def get_x_arr(player):
-    return [1, math.sqrt(player.c_ppg + player.c_apg + player.c_rpg +
-                         (10 * (player.c_fg_pct + player.c_spg + player.c_bpg)))]
+    return [[1], [math.sqrt(player.c_ppg + player.c_apg + player.c_rpg +
+                         (10 * (player.c_fg_pct + player.c_spg + player.c_bpg)))]]
 
 
 def get_y_arr(stat):

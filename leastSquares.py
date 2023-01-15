@@ -8,7 +8,7 @@ b = [[0], [0]]
 
 # Preform either recursive or forgetting least squares using sherman-morrison formula
 def recurse_ls(player_x, player_y, val):
-    global b, t
+    global p, b, t
 
     # Transforming the 'p' array
     x_arr = player_x
@@ -23,7 +23,8 @@ def recurse_ls(player_x, player_y, val):
             p[i][j] = p[i][j] / val
 
     # Calculating new values for 'b' array & combing 'b' and 'p'
-    xy = numpy.matmul(player_x, player_y)
+    xy = [[player_x[0][0] * player_y[0]], [player_x[1][0] * player_y[0]]]
     b = [[b[0][0] + xy[0][0]], [b[1][0] + xy[1][0]]]
     t = numpy.matmul(p, b)
+    print(t)
     return t

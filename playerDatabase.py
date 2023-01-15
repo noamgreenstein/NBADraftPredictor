@@ -39,7 +39,6 @@ training_2007 = numpy.array(
      webScraper.get_data('https://www.basketball-reference.com/players/t/tuckeal02.html', 2, 0, 0),
      webScraper.get_data('https://www.basketball-reference.com/players/l/landrca01.html', 2, 0, 0),
      webScraper.get_data('https://www.basketball-reference.com/players/p/pruitga01.html', 1, 0, 0),
-     # webScraper.get_data('https://www.basketball-reference.com/players/w/willima04.html', 2, 0, 0),
      webScraper.get_data('https://www.basketball-reference.com/players/f/fazekni01.html', 2, 0, 0),
      webScraper.get_data('https://www.basketball-reference.com/players/d/davisgl01.html', 2, 0, 0),
      webScraper.get_data('https://www.basketball-reference.com/players/d/davidje01.html', 2, 0, 0),

@@ -19,8 +19,9 @@ def get_it_done(players, y, test, test_y, name, pos):
 
     for l in range(len(players)):
         global theta
-        theta = rls.recurse_ls(x_data[l], y, 1)
+        theta = rls.recurse_ls(x_data[l], y[l], 1)
 
+    print(theta)
     rls_x_plot = [0 for i in range(70)]
 
     for a in range(len(players)):
@@ -29,7 +30,7 @@ def get_it_done(players, y, test, test_y, name, pos):
     graph.plot(rls_x_plot, y, label="Recursive Least Squares")
 
     test_x = [draftPredictor.get_x_arr(players[x])[1] for x in test]
-    graph.plot(test_x, test_y)
+    graph.plot(test_x, test_y, label="Test Data")
 
     graph.title(pos + " MSE: " + get_mse(test_x, test_y, theta, test_y.length))
     graph.xlabel("Recursive Least Squares formula y = \t +\tx")
